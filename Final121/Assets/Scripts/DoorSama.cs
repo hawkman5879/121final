@@ -8,6 +8,7 @@ public class DoorSama : MonoBehaviour
     // public Animation hinge;
     public GameObject Gate;
     public GameObject Effect;
+    public AudioSource boom;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class DoorSama : MonoBehaviour
     {
         Gate.SetActive(false);
         {
+            boom.Play();
             Instantiate(Effect, transform.position, transform.rotation);
         }
     }

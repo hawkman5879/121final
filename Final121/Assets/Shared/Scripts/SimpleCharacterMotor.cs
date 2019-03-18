@@ -35,20 +35,23 @@ public class SimpleCharacterMotor : MonoBehaviour
         {
             // We are grounded, so recalculate
             // move direction directly from axes
-            Debug.Log("We here?");
+            //Debug.Log("We here?");
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection = moveDirection * speed;
-            // Apply gravity
-            moveDirection.y = moveDirection.y - (gravity * Time.deltaTime);
-
-            // Move the controller
-            controller.Move(moveDirection * Time.deltaTime);
-
-            if (Input.GetButton("Jump"))
-            {
+            moveDirection *= speed;
+            //moveDirection.y = 0;
+            //if (Input.GetButton("Jump"))
+            if (Input.GetKey(KeyCode.Space))
                 moveDirection.y = jumpSpeed;
-            }
+            //
+
+        }
+        else if (controller.isGrounded == false) // Here I independently allow for both X and Z movement. 
+
+        {
+            moveDirection.x = Input.GetAxis("Horizontal") * speed;
+            moveDirection.z = Input.GetAxis("Vertical") * speed;
+            moveDirection = transform.TransformDirection(moveDirection);// Then reassign the current transform to the Vector 3.
         }
 
         // Apply gravity

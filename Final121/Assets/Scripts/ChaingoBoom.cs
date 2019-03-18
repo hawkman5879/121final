@@ -11,6 +11,7 @@ public class ChaingoBoom : MonoBehaviour
     public GameObject explosion1;
     public GameObject explosion2;
     public Component boatcollider;
+    public AudioSource boom;
     // Start is called before the first frame update
     void OnTriggerStay ()
     {
@@ -20,6 +21,7 @@ public class ChaingoBoom : MonoBehaviour
         explosion1.SetActive(true);
         explosion2.SetActive(true);
         boatcollider.GetComponent<BoxCollider>().enabled = true;
+        boom.Play();
 
     }
 }

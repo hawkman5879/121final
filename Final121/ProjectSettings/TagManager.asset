@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shootable
   - EarthShatter
+  - EndGame
   layers:
   - Default
   - TransparentFX

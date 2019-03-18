@@ -29,7 +29,7 @@ public class Hints : MonoBehaviour
             hint.text = "The Fire ahead will reveal the way. " + " The Dust will lead the way. " + "Not all Houses and Walls are Real. "; 
             if (door.activeSelf == false)
             {
-                hint.text = "Fire no longer pains you. Walk up and break the docks chains in order to escape.";
+                hint.text = "Fire no longer pains you. Walk up and break the docks chains in order to escape. Jump on the Red Boat to win!";
             }
         }
     }

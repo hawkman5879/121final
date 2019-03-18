@@ -48,17 +48,20 @@ public class Timer : MonoBehaviour
             time = time - 1;
             hint.text = "You have " + time.ToString() + " seconds to finish.";
         }
-        private void OnTriggerEnter(Collider other)
+        public void OnTriggerEnter(Collider other)
         {
-            hint.text = "You have won!";
-            gameOver = true;
+         if (other.tag == "EndGame")
+            {
+                hint.text = "You have won!";
+                gameOver = true;
+            }
         }
         private void overUpdate()
         {
             endGame = endGame - 1;
                 if (endGame <= 0)
                     Application.LoadLevel(Application.loadedLevel);
-    }
+        }
  }
 
 
